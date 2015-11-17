@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "brandon";
+  font-weight: bold;
+  src: url("/fonts/Brandon_bld.otf");
+}
+@font-face {
+  font-family: "brandon";
+  src: url("/fonts/Brandon_reg.otf");
+}
+@font-face {
+  font-family: "Sentinel";
+  src: url("/fonts/Sentinel-Book.otf");
+}
+@font-face {
+  font-family: "Sentinel";
+  font-weight: bold;
+  src: url("/fonts/Sentinel-Bold.otf");
+}
+@font-face {
+  font-family: "Sentinel";
+  font-weight: bold;
+  src: url("/fonts/Sentinel-Bold.otf");
+}
+
+body {
+  font: 14pt/1.5 sentinel;
+}
+.jumbotron {
+  background: none;
+}
+.jumbontron .logo {
+  width: 200px;
+  height: 200px;
+  background: #555;
+}
