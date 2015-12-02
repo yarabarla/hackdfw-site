@@ -21,6 +21,14 @@
   font-weight: bold;
   src: url("../fonts/Sentinel-Bold.otf");
 }
+@font-face {
+  font-family: "Sentinel";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/Sentinel-BoldItalic.otf");
+}
+
+
 
 body {
   font: 14pt/1.5 sentinel;
@@ -30,6 +38,7 @@ body {
 a {
   border-bottom: 1px solid;
   color: #000;
+  font-weight: bold;
 }
 a:hover {
   color: #555;
@@ -77,9 +86,10 @@ section.quote img {
   height: 200px;
 }
 section.quote p {
-    font-size: 1.5em;
-    font-family: brandon;
+    font-size: 1.8em;
     text-align: center;
+    font-style: italic;
+    font-weight: bold;
 }
 
 .jumbotron {
@@ -90,7 +100,7 @@ section.quote p {
 .jumbotron .logo {
   width: 200px;
   height: 200px;
-  background: url("/img/logo.png") no-repeat center / contain;
+  background: url("/img/Logo.png") no-repeat center / contain;
   margin: 50px auto;
 }
 .jumbotron h1 {
@@ -114,7 +124,9 @@ section.quote p {
   transition: all 200ms ease-in-out;
 }
 .jumbotron .btn:hover {
-  background: rgba(253, 219, 0, 0.5);
+  background: #000; 
+  color: #FFF;
+  border-color: #000;
 }
 .jumbotron .btn:focus {
   outline: none;
@@ -234,6 +246,16 @@ nav ul.nav {
   -ms-filter:     grayscale(0%);
   -o-filter:      grayscale(0%);
   opacity: 1;
+}
+
+#contact p {
+  margin-bottom: 30px;
+}
+#contact h3 {
+  margin-top: 60px;
+  font-size: 2em;
+  font-family: sentinel;
+  font-style: italic;
 }
 
 

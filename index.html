@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -8,8 +7,8 @@
 
   <title></title>
 </head>
-
 <body>
+
   <div id="shapes">
     <object type="image/svg+xml" data="img/shapes/circle.svg"></object>
     <object type="image/svg+xml" data="img/shapes/halfcircle.svg"></object>
@@ -19,18 +18,22 @@
     <object type="image/svg+xml" data="img/shapes/triangle.svg"></object>
     <object type="image/svg+xml" data="img/shapes/wavy.svg"></object>
   </div>
+
   <div id="background"></div>
+
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav nav-pills navbar-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Messages</a></li>
+          <li class="active"><a href="#">Overview</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
   <header class="container">
     <div class="jumbotron">
       <div class="logo"></div>
@@ -39,12 +42,15 @@
       <button class="btn">Sponsor</button>
     </div>
   </header>
+
   <section class="quote container">
     <img class="col-md-8 col-md-offset-2" src="img/Group.svg">
   </section>
+
   <section class="quote container">
-    <p class="col-md-8 col-md-offset-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially.</p>
+    <p class="col-md-8 col-md-offset-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
   </section>
+
   <section class="container" id="faq">
     <div class="col-md-8 col-md-offset-2">
       <div class="row text-center">
@@ -76,13 +82,19 @@
       </div>
     </div>
   </section>
+
   <section class="quote container">
     <img class="col-md-8 col-md-offset-2" src="img/Superhero.svg" width="200px">
   </section>
+
   <section class="container" id="sponsors">
     <div class="row text-center">
       <h2>Sponsors</h2>
     </div>
+    <div class="row text-center">
+      <h1><i>TBA</i></h1>
+    </div>
+    <!--
     <div class="row text-center partner">
       <a href="http://www.intuit.com/" target="_blank"><img src="img/partners/intuit.png" alt="intuit"></a>
     </div>
@@ -120,12 +132,15 @@
       <a href="https://ti.com" target="_blank"><img src="img/partners/ti.png" alt="Texas Instruments" /></a>
       <a href="https://gamestop.com" target="_blank"><img src="img/partners/gamestop.png" alt="Gamestop" /></a>
       <a href="http://www.showtechproductions.com/" target="_blank"><img src="img/partners/showtech.png" alt="Show Tech Productions" /></a>
+      -->
     </div>
   </section>
+
   <section class="quote container">
     <img class="col-md-8 col-md-offset-2" src="img/Contact.svg">
   </section>
-  <section class="contact container">
+
+  <section id="contact" class="container">
     <div class="row text-center">
       <h2>Contact</h2>
     </div>
@@ -145,6 +160,7 @@
       </div>
     </div>
   </section>
+
   <footer>
     <div class="container">
       <p class="pull-left">
@@ -165,5 +181,4 @@
   <script src="js/underscore-min.js"></script>
   <script src="js/javascript.js"></script>
 </body>
-
 </html>
