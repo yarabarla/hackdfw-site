@@ -86,10 +86,14 @@ section.quote img {
   height: 200px;
 }
 section.quote p {
-    font-size: 1.8em;
+    font-size: 1.4em;
     text-align: center;
-    font-style: italic;
-    font-weight: bold;
+}
+section.quote i {
+  font-family: brandon;
+  font-size: 1.6em;
+  font-style: normal;
+  font-weight: bold;
 }
 
 .jumbotron {
@@ -166,14 +170,16 @@ nav ul.nav {
 
 
 #faq .question:nth-child(even) {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+  float: left;
 }
 #faq .question:nth-child(odd) {
-  margin-top: 50px;
+  margin-top: 70px;
+  float: right;
 }
 #faq .question:after {
   content: "";
-  width: 140px;
+  width: 80px;
   position: absolute;
   bottom: 100%;
   border-bottom: 5px solid;
