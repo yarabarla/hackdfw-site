@@ -87,15 +87,6 @@ section.quote img {
   max-height: 200px;
 }
 
-@media (max-width: 768px) {
-  section.quote img {
-    width: 100%;
-  }
-  section.quote {
-    margin: 100px auto;
-  }
-}
-
 section.quote p {
     font-size: 1.4em;
     text-align: center;
@@ -126,16 +117,6 @@ section.quote i {
   letter-spacing: 0.5em;
   padding-left: 0.5em;
   margin-bottom: 70px;
-}
-
-@media (max-width: 768px) {
-  .jumbotron .logo {
-    margin: 30px auto !important;
-  }
-  .jumbotron h1 {
-    margin-bottom: 10px !important;
-    font-size: 1.7em !important;
-  }
 }
 
 .jumbotron .btn {
@@ -200,12 +181,6 @@ nav ul.nav {
 #faq .question:nth-child(odd) {
   margin-top: 70px;
   float: right;
-}
-
-@media (max-width: 768px) {
-  #faq .question {
-    margin: 10px auto !important;
-  }
 }
 
 
@@ -310,5 +285,23 @@ footer li a {
   margin: 0 20px;
 }
 
-
+@media (max-width: 768px) {
+  section.quote img {
+    width: 100%;
+  }
+  section.quote {
+    margin: 100px auto;
+  }
+  .jumbotron .logo {
+    margin: 30px auto !important;
+  }
+  .jumbotron h1 {
+    margin-bottom: 10px !important;
+    font-size: 1.7em !important;
+  }
+  #faq .question {
+    margin: 10px auto !important;
+    float: left !important;
+  }
+}
 
