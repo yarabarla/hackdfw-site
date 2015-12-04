@@ -115,7 +115,7 @@ section.quote i {
 .jumbotron .logo {
   width: 200px;
   height: 200px;
-  background: url("/img/Logo.png") no-repeat center / contain;
+  background: url("../img/Logo.png") no-repeat center / contain;
   margin: 50px auto;
 }
 .jumbotron h1 {
