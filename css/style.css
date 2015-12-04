@@ -190,6 +190,13 @@ nav ul.nav {
   float: right;
 }
 
+@media (max-width: 768px) {
+  #faq .question {
+    margin: 10px auto !important;
+  }
+}
+
+
 #faq .question:after {
   content: "";
   width: 80px;
