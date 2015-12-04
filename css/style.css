@@ -82,9 +82,20 @@ section.container h3 {
 section.quote {
     margin: 200px auto;
 }
+
 section.quote img {
-  height: 200px;
+  max-height: 200px;
 }
+
+@media (max-width: 768px) {
+  section.quote img {
+    width: 100%;
+  }
+  section.quote {
+    margin: 100px auto;
+  }
+}
+
 section.quote p {
     font-size: 1.4em;
     text-align: center;
@@ -173,10 +184,12 @@ nav ul.nav {
   margin-bottom: 70px;
   float: left;
 }
+
 #faq .question:nth-child(odd) {
   margin-top: 70px;
   float: right;
 }
+
 #faq .question:after {
   content: "";
   width: 80px;
@@ -184,6 +197,7 @@ nav ul.nav {
   bottom: 100%;
   border-bottom: 5px solid;
 }
+
 /*FAQ Colors!*/
 #faq .question:nth-child(5n+0):after {
   border-bottom-color: #EE586E;
