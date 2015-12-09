@@ -116,7 +116,12 @@ section.quote i {
   font-weight: bold;
   letter-spacing: 0.5em;
   padding-left: 0.5em;
-  margin-bottom: 70px;
+}
+
+.jumbotron .subtitle {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 30px;
 }
 
 .jumbotron .btn {
