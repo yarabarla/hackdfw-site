@@ -1,6 +1,6 @@
 # hackdfw-site
 
-![Logo](img/logo_with_text.png)
+![Logo](img/logo_small.png)
 
 The website for HackDFW 2015.
 
