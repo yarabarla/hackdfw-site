@@ -67,3 +67,30 @@ two.bind('update',function() {
     child.step();
   });
 });
+
+//make sure it runs after dom
+$(function() {
+  //get all divs linked to navbar
+  var links = $('section.container').map(function() {
+    var $this = $(this);
+    return $('ul.nav li a').map(function() {
+      if ($this.attr('id') == $(this).attr('href').replace('#',''))
+        return $this;
+    }).toArray();
+  });
+  $(window).scroll(function() {
+    links.each(function() {
+      var $this = $(this);
+      if ($this.offset().top - 300 <= $(window).scrollTop()) {
+        $('ul.nav li').each(function() {
+          if ($(this).find('a').attr('href') == "#".concat($this.attr('id'))) {
+            $('ul.nav li').removeClass('active'); 
+            $(this).addClass('active');
+            console.log(i);
+            return false;
+          }
+        });
+      }
+    });
+  });
+});
