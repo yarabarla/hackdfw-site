@@ -93,3 +93,9 @@ $(function() {
     });
   });
 });
+
+// Javascript workaround for non HTML5 compliant browser
+// acwells - austincwells@gmail.com 
+$("#registration_button").on('click', function(){
+     window.location = "http://app.hackdfw.com/registration";    
+});
