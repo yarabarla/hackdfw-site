@@ -13,13 +13,11 @@ var colors = [
   "#FF9CA8",
   "#38C555"
 ]
-var spacing = 200;
+var shapes = []; //list of all different shapes
+var particles = []; //list of all unique particles from shapes
 
 //start this shit
 var two = new Two(params).appendTo(elem);
-
-var shapes = two.makeGroup(); //group of all different shapes
-var particles = two.makeGroup(); //group of all unique particles from shapes
 
 //find all shapes
 var objects = $('#shapes object');
@@ -28,51 +26,44 @@ objects.each(function(i, el) {
   el.onload = function() {
     var shape = two.interpret($(el).contents().find('svg')[0]);
     shape.visible = false;
-    shape.scale = _.random(6,10)*.01; //The original SVGs are just this massive!
-    shape.center();
-    shapes.add(shape);
+    shapes.push(shape);
     if (!--count) generateShapes();
   }
 });
-
 //generate random shapes
-function generateShapes() { 
-  var rows = Math.floor(two.height / spacing);
-  var cols = Math.floor(two.width / spacing);
+function generateShapes() {
+  _(20).times(function(n) {
+    var shape = _.sample(shapes).clone();
 
-  for (var i = 0; i < rows; i++) {
-    var even = !!(i % 2);
+    shape.fill = _.sample(colors);
+    shape.scale = _.random(10,20)*.01; //The original SVGs are just this massive!
+    shape.opacity = 0;
+    shape.visible = true;
 
-    for (var j = 0; j < cols - 1; j++) {
-      var k = j;
-
-      if (even) k += 0.5;
-
-      var vi = i / (rows - 1);
-      if (!!(j % 2)) 
-        vi = (i - 0.5) / (rows - 1);
-
-      var hi = k / (cols - 1);                          
-      var shape = _.sample(shapes.children).clone();
-
-      shape.fill = _.sample(colors);
-      shape.opacity = 1;
-      shape.visible = true;
-      shape.translation.set(hi * two.width, vi * two.height);
-      shape.name = j;
-
-      shape.step = function() {
-        this.translation.x += _.random(-1,1);
-        this.translation.y += _.random(-1,1);
-      }
-      particles.add(shape);
+    var opacity, step, stepX, stepY, initialX, initialY;
+    shape.start = function() {
+      stepX = _.random(-10,10)/5;
+      stepY = _.random(-10,10)/5;
+      step = _.random(10,100)/10000;
+      initialX = _.random(0,two.width);
+      initialY = _.random(0,two.height);
+      shape.translation.set(initialX,initialY);
+      opacity = -1.0;
     }
-  }
+    shape.step = function() {
+      if (shape.opacity <= 0) shape.start();
+      opacity += step;
+      shape.translation.x += stepX;
+      shape.translation.y += stepY;
+      shape.rotation += step;
+      shape.opacity = 1 - Math.abs(opacity);
+    }
+    particles.push(shape);
+  });
 }
-
 //main animation
 two.bind('update',function() {
-  _.each(particles.children,function(child) {
+  _.each(particles,function(child) {
     child.step();
   });
 });
@@ -95,6 +86,7 @@ $(function() {
           if ($(this).find('a').attr('href') == "#".concat($this.attr('id'))) {
             $('ul.nav li').removeClass('active');
             $(this).addClass('active');
+            console.log(i);
             return false;
           }
         });
