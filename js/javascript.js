@@ -95,6 +95,7 @@ $(function() {
           if ($(this).find('a').attr('href') == "#".concat($this.attr('id'))) {
             $('ul.nav li').removeClass('active');
             $(this).addClass('active');
+            console.log(i);
             return false;
           }
         });
