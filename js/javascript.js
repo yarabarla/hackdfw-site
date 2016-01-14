@@ -84,7 +84,7 @@ function generateShapes() {
       var maxRange = 40;
       // shape.counter = _.random(-maxRange,maxRange);
       shape.counter = 0;
-      shape.direction = true; //true is up, false is down
+      shape.direction = !!_.random(0,1); //true is up, false is down
 
       shape.maxWait = _.random(5,10);
       shape.wait = 0;
