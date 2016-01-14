@@ -47,7 +47,11 @@ function generateShapes() {
     "horizontal" : function(shape, counter, maxRange) {
       shape.translation.x += counter;
     },
-    "diagonal" : function(shape, counter, maxRange) {
+    "leftDiagonal" : function(shape, counter, maxRange) {
+      shape.translation.y += counter;
+      shape.translation.x -= counter;
+    },
+    "rightDiagonal" : function(shape, counter, maxRange) {
       shape.translation.y += counter;
       shape.translation.x += counter;
     },
@@ -81,9 +85,9 @@ function generateShapes() {
       shape.visible = true;
       shape.translation.set(hi * two.width, vi * two.height);
 
-      var maxRange = 40;
-      // shape.counter = _.random(-maxRange,maxRange);
-      shape.counter = 0;
+      var maxRange = 20;
+      shape.counter = _.random(-maxRange,maxRange);
+      // shape.counter = 0;
       shape.direction = !!_.random(0,1); //true is up, false is down
 
       shape.maxWait = _.random(5,10);
@@ -114,7 +118,7 @@ function generateShapes() {
       }
       shape.step = function() {
         if (!this.count()) return;
-        animations[this.animation](this, this.counter/30, maxRange);
+        animations[this.animation](this, this.counter/15, maxRange);
       }
       particles.add(shape);
     }
