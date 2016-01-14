@@ -82,7 +82,8 @@ function generateShapes() {
       shape.translation.set(hi * two.width, vi * two.height);
 
       var maxRange = 40;
-      shape.counter = _.random(-maxRange,maxRange);
+      // shape.counter = _.random(-maxRange,maxRange);
+      shape.counter = 0;
       shape.direction = true; //true is up, false is down
 
       shape.maxWait = _.random(5,10);
