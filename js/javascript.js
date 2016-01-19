@@ -85,7 +85,7 @@ function generateShapes() {
       shape.visible = true;
       shape.translation.set(hi * two.width, vi * two.height);
 
-      var maxRange = 20;
+      var maxRange = 15;
       shape.counter = _.random(-maxRange,maxRange);
       // shape.counter = 0;
       shape.direction = !!_.random(0,1); //true is up, false is down
