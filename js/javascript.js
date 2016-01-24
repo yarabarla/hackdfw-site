@@ -70,15 +70,16 @@ two.bind('update',function() {
 
 //make sure it runs after dom
 $(function() {
-  //make things reveal when you scroll to it.
-  window.scrollReveal = ScrollReveal({
-    reset: true
-  });
-  scrollReveal.reveal('.rev');
+  if(!navigator.userAgent.match('CriOS')) {
+    //make things reveal when you scroll to it.
+    window.scrollReveal = ScrollReveal({
+      reset: true
+    });
+    scrollReveal.reveal('.rev');
 
-  //make navbar transition
-  $('#navbar').onePageNav({
-    currentClass: 'active'
-  });
-
+    //make navbar transition
+    $('#navbar').onePageNav({
+      currentClass: 'active'
+    });
+  }
 });
