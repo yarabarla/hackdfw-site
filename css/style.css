@@ -179,6 +179,9 @@ nav ul.nav {
   border-bottom: 5px solid #FDDB00;
   border-radius: 0;
 }
+.nav>li>a.blog:hover {
+  border-bottom: 5px solid #00D6C9;
+}
 
 
 #faq .question:nth-child(even) {
