@@ -306,6 +306,9 @@ nav ul.nav {
 #sponsors .you:hover {
   opacity: 1;
 }
+#sponsorship {
+  padding-top: 100px;
+}
 #sponsorship .btn {
   background: none;
   border: 4px solid;
@@ -361,6 +364,10 @@ nav ul.nav {
   font-size: 1.6em;
   font-family: sentinel;
   font-style: italic;
+}
+#sponsorship iframe {
+  margin-top: 100px;
+  border: none;
 }
 
 
