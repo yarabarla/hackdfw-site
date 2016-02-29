@@ -365,8 +365,11 @@ nav ul.nav {
   font-family: sentinel;
   font-style: italic;
 }
-#sponsorship iframe {
+#sponsorship .say {
   margin-top: 100px;
+}
+#sponsorship iframe {
+  margin: 30px 0;
   border: none;
 }
 
