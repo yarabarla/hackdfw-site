@@ -195,28 +195,33 @@ nav ul.nav {
 }
 
 
-#faq .question:after {
+#faq .question:after, #judges .judge:after {
   content: "";
   width: 80px;
   position: absolute;
   bottom: 100%;
   border-bottom: 5px solid;
 }
+#judges .judge:after {
+  left: 15px;
+  top: 15px;
+  width: 80px;
+}
 
-/*FAQ Colors!*/
-#faq .question:nth-child(5n+0):after {
+/*FAQ & Judges Colors!*/
+#faq .question:nth-child(5n+0):after, #judges .judge:nth-child(5n+0):after {
   border-bottom-color: #EE586E;
 }
-#faq .question:nth-child(5n+1):after {
+#faq .question:nth-child(5n+1):after, #judges .judge:nth-child(5n+1):after {
   border-bottom-color: #38C555;
 }
-#faq .question:nth-child(5n+2):after {
+#faq .question:nth-child(5n+2):after, #judges .judge:nth-child(5n+2):after {
   border-bottom-color: #1ED5C8;
 }
-#faq .question:nth-child(5n+3):after {
+#faq .question:nth-child(5n+3):after, #judges .judge:nth-child(5n+3):after {
   border-bottom-color: #FF9CA8;
 }
-#faq .question:nth-child(5n+4):after {
+#faq .question:nth-child(5n+4):after, #judges .judge:nth-child(5n+4):after {
   border-bottom-color: #18A8DE;
 }
 
@@ -374,6 +379,29 @@ nav ul.nav {
 }
 
 
+#judges img {
+  height: 180px;
+  margin: auto;
+  display: block;
+}
+#judges h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  margin-top: 30px;
+}
+#judges h4 {
+  font-size: 5em;
+}
+#judges .row {
+  margin-bottom: 50px;
+}
+#judges .more {
+  display: block;
+  margin-top: 40px;
+  font-size: 1.2em;
+}
+
+
 #contact p {
   margin-bottom: 30px;
 }
@@ -414,5 +442,11 @@ footer li a {
   #faq .question {
     margin: 10px auto !important;
     float: left !important;
+  }
+  #judges .judge:after {
+    display: none;
+  }
+  #judges .judge {
+    text-align: center;
   }
 }
