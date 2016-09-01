@@ -32,6 +32,7 @@
 
 body {
   font: 14pt/1.5 sentinel;
+  background: rgb(252, 217, 0);
 }
 
 
@@ -44,6 +45,11 @@ a:hover {
   color: #555;
   text-decoration: none;
 }
+h1,h2,h3,h4,h5,h6 {
+  font-family: brandon;
+  font-weight: bold;
+}
+
 
 #shapes * {
   visibility: hidden;
@@ -52,12 +58,64 @@ a:hover {
   top: -13337px;
   left: -13337px;
 }
-h1,h2,h3,h4,h5,h6 {
-  font-family: brandon;
+
+nav.navbar {
+  padding: 30px 40px;
+  border: none;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%);
 }
-#faq .question {
-  margin-bottom: 50px;
+nav ul.nav {
+  font: 1.2em/1 brandon;
+  color: #000;
 }
+.nav>li>a {
+  padding: 8px 0;
+  margin: 0 20px;
+  font-weight: bold;
+  background: none !important;
+  border-bottom: 5px solid transparent;
+  transition: all 200ms ease-in-out;
+}
+.nav:hover>li.active>a {
+  border-bottom: 5px solid transparent;
+}
+.nav>li>a:hover, .nav>li>a:visited {
+  background: none;
+  border-bottom: 5px solid #FDDB00;
+  border-radius: 0;
+  color: #000;
+}
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+  background: none;
+  color: #000;
+  border-bottom: 5px solid #FDDB00;
+  border-radius: 0;
+}
+.nav>li>a.blog:hover {
+  border-bottom: 5px solid #00D6C9;
+}
+
+
+.jumbotron {
+  background: none;
+}
+#overview {
+  text-align: center;
+}
+
+
+#faq .question:nth-child(even) {
+  margin-bottom: 70px;
+  float: left;
+}
+
+#faq .question:nth-child(odd) {
+  margin-top: 70px;
+  float: right;
+}
+
 
 footer {
   margin-top: 200px;
