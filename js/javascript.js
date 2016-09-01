@@ -5,6 +5,24 @@ const colors = [
   "#FF9CA8",
   "#38C555"
 ]
+//NOTE BODY BACKGROUND-COLOR SHOULD BE SET AND IT SHOULD BE RGB.
+const bodyToWhite = anime({
+  targets: 'body',
+  'background-color': function() {
+    const curr = $('body').css('background-color');
+    console.log(curr);
+    return [curr,'rgb(255,255,255)'];
+  },
+  autoplay: false
+})
+const bodyToYellow = anime({
+  targets: 'body',
+  'background-color': function() {
+    const curr = $('body').css('background-color');
+    return [curr,'rgb(252, 217, 0)'];
+  },
+  autoplay: false
+})
 function animateLogo() {
   const rectShortLength = $('#logo-rect-short').attr('height');
   const rectLongLength = $('#logo-rect-long').attr('height');
@@ -16,14 +34,7 @@ function animateLogo() {
   $('#logo-dot-top, #logo-dot-bot').css('opacity',0);
   const afterShowDot = setTimeout(function() {
     $('#logo-dot-top, #logo-dot-bot').css('opacity',1);
-    $('body').css('background-color','#FCFCFC');
   },initialDelay);
-  const bodyColor = anime({
-    targets: 'body',
-    'background-color': ['rgb(252, 217, 0)','rgb(255,255,255)'],
-    duration: duration,
-    delay: initialDelay,
-  })
   const moveDot = anime({
     targets: '#logo-dot-mid',
     translateX: [-rectShortLength,0],
@@ -39,7 +50,10 @@ function animateLogo() {
     },
     delay: showDelay,
     duration: showDuration,
-    complete: moveDot.play
+    complete: function() {
+      moveDot.play()
+      bodyToWhite.play()
+    }
   })
   const expandLong = anime({
     targets: '#logo-rect-long',
@@ -92,6 +106,56 @@ function animateLogo() {
     delay: initialDelay
   });
 }
+function animateTitle() {
+  const delay = 2500;
+  //done by replacing title with spans
+  const letters = $('#overview .title').html();
+  $('#overview .title').html('');
+  for (var i=0;i<letters.length;i++) {
+    const span = $('<span/>').css('display','inline-block').html(letters[i]).appendTo('#overview .title');
+    anime({
+      targets: span[0],
+      opacity: [0,1],
+      translateY: [20,0],
+      delay: delay+i*50
+    })
+  }
+}
+function animateHeader() {
+  const delay = 3000;
+  const animateSubtitle = anime({
+    targets: '#overview .subtitle',
+    opacity: [0,1],
+    translateY: [10,0],
+    delay: delay
+  })
+  const animateButtons = anime({
+    targets: '#overview .buttons',
+    opacity: [0,1],
+    translateY: [10,0],
+    delay: delay+200
+  })
+}
+function onScroll() {
+  $(window).scroll(function(e) {
+    const curr = $(document).scrollTop();
+    const wHeight = $(window).height();
+    $('section.container').each(function(i) {
+      const top = $(this).offset().top;
+      const height = $(this).height();
+      if (curr+wHeight > top+300 && curr < top+height) {
+        if (i%2)
+          $('.background').removeClass('white').addClass('yellow')
+        else
+          $('.background').removeClass('yellow').addClass('white')
+        return;
+      }
+    })
+  })
+}
 $(document).ready(function() {
   animateLogo();
+  animateTitle();
+  animateHeader();
+  onScroll();
 })
