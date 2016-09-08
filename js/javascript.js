@@ -60,7 +60,7 @@ function animateLogo() {
     'stroke-dasharray': [rectLongLength*2,rectLongLength*2],
     'stroke-dashoffset': [rectLongLength*2,0],
     translateY: [rectLongLength,0],
-    duration: 500,
+    duration: 900,
     delay: initialDelay,
     easing: "easeOutExpo"
   })
@@ -75,13 +75,13 @@ function animateLogo() {
   })
   const moveBotDot = anime({
     targets: '#logo-dot-top',
-    translateY: [rectLongLength/2,0],
+    translateY: [rectLongLength/2+50,0],
     duration: duration,
     delay: initialDelay,
   })
   const moveTopDot = anime({
     targets: '#logo-dot-bot',
-    translateY: [-rectLongLength/2,0],
+    translateY: [-rectLongLength/2-50,0],
     duration: duration,
     delay: initialDelay,
   })
