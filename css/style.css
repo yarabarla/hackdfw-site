@@ -40,13 +40,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 140%;
   transition: 200ms ease-in-out;
 }
-.background.yellow {
+body.yellow .background {
   background-color: rgb(255, 233, 93);
 }
-.background.white {
+body.white .background {
   background-color: #FFF;
 }
 
@@ -69,43 +69,54 @@ h1 {
 h2 {
   font-size: 4rem;
 }
+.hidden {
+  opacity: 0;
+}
 
 #shapes * {
   visibility: hidden;
   pointer-events: none;
   position: absolute;
   top: -13337px;
+  width: 0px;
+  height: 0px;
   left: -13337px;
 }
 .btn {
-  background: rgba(0,0,0,0.1);
-  padding: 20px 50px;
+  background: rgb(252, 217, 0);
+  padding: 15px 40px;
   font-family: brandon;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.8rem;
   overflow: hidden;
   position: relative;
+  border: none;
   border-radius: 5px;
+  z-index: 0;
+  text-transform: uppercase;
   transition: 200ms ease-in-out;
+}
+body.yellow .btn {
+  background: #FFF;
 }
 .btn:after {
   content: '';
   position: absolute;
   top: 100%;
   width: 200%;
-  height: 400%;
+  height: 500%;
   background: #000;
   border-radius: 5px;
   transform: rotateZ(45deg);
   left: -150%;
-  transition: 200ms ease-in-out;
+  transition: 400ms ease-in-out;
   z-index: -1;
 }
 .btn:hover {
   color: #FFF;
 }
 .btn:hover:after {
-  top: -100%;
+  top: -200%;
   left: -50%;
 }
 
@@ -190,6 +201,16 @@ nav ul.nav {
   border-radius: 10px;
   border: 5px solid rgba(0,0,0,0.1);
 }
+#contact h2 {
+  margin: 0;
+}
+#contact .location {
+  padding: 20px;
+  background: #eee;
+  font-family: brandon;
+  display: inline-block;
+  border-radius: 5px;
+}
 
 footer {
   margin-top: 100px;
@@ -210,4 +231,20 @@ footer .launchdfw {
 }
 footer .fa-heart {
   color: #EA4E4E;
+}
+
+@media only screen and (max-width: 1000px) {
+  #overview .title {
+      font-size: 3rem;
+      letter-spacing: 1rem;
+      text-indent: 1rem;
+  }
+  #contact {
+    padding: 20px;
+    margin: 20px;
+  }
+  #faq .question {
+    margin: 10px auto !important;
+    float: left !important;
+  }
 }

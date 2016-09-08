@@ -24,8 +24,8 @@ const bodyToYellow = anime({
   autoplay: false
 })
 function animateLogo() {
-  const rectShortLength = $('#logo-rect-short').attr('height');
-  const rectLongLength = $('#logo-rect-long').attr('height');
+  const rectShortLength = $('#logo-rect-short').attr('x1')-$('#logo-rect-short').attr('x2');
+  const rectLongLength =  $('#logo-rect-long').attr('y2')-$('#logo-rect-short').attr('y1');
   const showDelay = 1000;
   const showDuration = 1000;
   const duration = 2000;
@@ -57,32 +57,19 @@ function animateLogo() {
   })
   const expandLong = anime({
     targets: '#logo-rect-long',
-    height: function(el) {
-      const bb = el.getBBox();
-      const pathLength = bb.height;
-      el.setAttribute('height', pathLength);
-      return [0, pathLength];
-    },
-    y: function(el) {
-      const bb = el.getBBox();
-      return [bb.y+bb.height/2,bb.y]
-    },
-    duration: duration,
+    'stroke-dasharray': [rectLongLength*2,rectLongLength*2],
+    'stroke-dashoffset': [rectLongLength*2,0],
+    translateY: [rectLongLength,0],
+    duration: 500,
     delay: initialDelay,
+    easing: "easeOutExpo"
   })
   const expandShort = anime({
     targets: '#logo-rect-short',
-    height: function(el) {
-      const bb = el.getBBox();
-      const pathLength = bb.height;
-      el.setAttribute('height', pathLength);
-      return [0, pathLength];
-    },
-    y: function(el) {
-      const bb = el.getBBox();
-      return [bb.y+bb.height,bb.y]
-    },
-    duration: showDuration,
+    'stroke-dasharray': [rectShortLength,rectShortLength],
+    'stroke-dashoffset': [rectShortLength,0],
+    translateX: [-rectShortLength,0],
+    duration: 800,
     delay: initialDelay,
     easing: "easeOutExpo"
   })
@@ -145,15 +132,16 @@ function onScroll() {
       const height = $(this).height();
       if (curr+wHeight > top+300 && curr < top+height) {
         if (i%2)
-          $('.background').removeClass('white').addClass('yellow')
+          $('body').removeClass('white').addClass('yellow')
         else
-          $('.background').removeClass('yellow').addClass('white')
+          $('body').removeClass('yellow').addClass('white')
         return;
       }
     })
   })
 }
-$(document).ready(function() {
+$(window).ready(function() {
+  $('.jumbotron').removeClass('hidden');
   animateLogo();
   animateTitle();
   animateHeader();
