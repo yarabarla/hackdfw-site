@@ -263,6 +263,7 @@ nav ul.nav {
   border: 2px dashed;
   display: inline-block;
   font-family: "Brandon";
+  text-decoration: none;
   text-align: left;
   font-size: 1em;
   line-height: 1.2;
@@ -355,7 +356,7 @@ nav ul.nav {
 }
 #contact .location {
   padding: 20px;
-  background: #eee;
+  background: rgba(0,0,0,0.1);
   font-family: brandon;
   display: inline-block;
   border-radius: 5px;
