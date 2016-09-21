@@ -347,6 +347,10 @@ nav ul.nav {
   border: none;
 }
 
+.large-sponsor {
+  max-width: 85%
+}
+
 #contact {
   padding: 50px;
   border: 5px solid rgba(0,0,0,0.1);
